@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.api:RMSDTask",
+      "name": "t1x",
+      "dataset": "t1x_duan_val",
+      "output_dir": "evals/results/t1x",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 10,
+      "prompt_batch_size": 128,
+      "k_values": [
+        1,
+        3,
+        10
+      ],
+      "paper": true,
+      "description": "Transition states",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {
+        "shard_examples": 1024
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nahual</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside>
+    <div class="brand">Nahual</div>
+    <select id="source" title="Data split or evaluation samples"></select>
+    <div class="meta"><span id="count"></span><input id="jump" type="number" min="0" placeholder="Go to #"></div>
+    <div id="list"></div>
+  </aside>
+  <main>
+    <div id="thread"></div>
+    <footer>
+      <form id="composer">
+        <textarea id="input" rows="1" placeholder="Message Nahual (structures as ```xyz blocks)"></textarea>
+        <button id="send" type="submit" title="Send">&#8593;</button>
+      </form>
+      <div class="settings">
+        <select id="ckpt" title="Checkpoint"></select>
+        <input id="custom" placeholder="path/to/step_N.pt" hidden>
+        <span id="mstate" class="state"></span>
+        <label>samples <input id="ns" type="number" value="4" min="1"></label>
+        <label>steps <input id="steps" type="number" value="50" min="1"></label>
+        <label>temperature <input id="temp" type="number" value="1.0" step="0.1" min="0"></label>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.mof_properties.task:MOFPropertyTask",
+      "name": "coremof_pore_volume",
+      "dataset": "coremof_test_pore_volume",
+      "output_dir": "evals/results/coremof_pore_volume",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 4,
+      "num_steps": 2,
+      "paper": true,
+      "description": "MOF properties",
+      "response": {
+        "mode": "text",
+        "profile": "material_property",
+        "label": "pore volume",
+        "unit": "cm3/g"
+      },
+      "checkpoint": {
+        "shard_examples": 768
+      }
+    },
+    {
+      "factory": "evals.tasks.mof_properties.task:MOFPropertyTask",
+      "name": "coremof_surface_area",
+      "dataset": "coremof_test_surface_area",
+      "output_dir": "evals/results/coremof_surface_area",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 4,
+      "num_steps": 2,
+      "paper": true,
+      "description": "MOF properties",
+      "response": {
+        "mode": "text",
+        "profile": "material_property",
+        "label": "surface area",
+        "unit": "m2/g"
+      },
+      "checkpoint": {
+        "shard_examples": 768
+      }
+    },
+    {
+      "factory": "evals.tasks.mof_properties.task:MOFPropertyTask",
+      "name": "qmof_bandgap",
+      "dataset": "qmof_test_bandgap",
+      "output_dir": "evals/results/qmof_bandgap",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 60,
+      "num_steps": 2,
+      "paper": true,
+      "description": "MOF properties",
+      "response": {
+        "mode": "text",
+        "profile": "material_property",
+        "label": "bandgap",
+        "unit": "eV"
+      },
+      "checkpoint": {
+        "shard_examples": 768
+      }
+    }
+  ]
+}

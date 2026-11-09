@@ -1,0 +1,17 @@
+.venv
+__pycache__/
+*.pyc
+.env*
+!.env.example
+data/
+logs/
+/models/
+/hub/
+evals/results*/
+*.egg-info/
+.pytest_cache/
+/build/
+/dist/
+!evals/tasks/*/data/
+!evals/tasks/*/data/*.csv
+/.cache/

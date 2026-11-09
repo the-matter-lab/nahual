@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.reaction_paths.neb:NebTask",
+      "name": "neb",
+      "dataset": "oc20neb_combined_test_30",
+      "output_dir": "evals/results/neb",
+      "max_new_tokens": 2400,
+      "samples_per_prompt": 3,
+      "prompt_batch_size": 30,
+      "k_values": [
+        1,
+        3
+      ],
+      "default_temperature": 0.0,
+      "paper": false,
+      "description": "Reaction paths",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {}
+    },
+    {
+      "factory": "evals.tasks.reaction_paths.neb_constrained:NebConstrainedTask",
+      "name": "neb_constrained",
+      "dataset": "oc20neb_combined_test_30",
+      "output_dir": "evals/results/neb_constrained",
+      "max_new_tokens": 2400,
+      "samples_per_prompt": 3,
+      "prompt_batch_size": 30,
+      "k_values": [
+        1,
+        3
+      ],
+      "default_temperature": 0.0,
+      "paper": true,
+      "description": "Reaction paths",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {
+        "shard_examples": 6
+      },
+      "backends": [
+        "checkpoint"
+      ]
+    }
+  ]
+}

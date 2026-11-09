@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.molecular_properties.qm9_edm_prop:create_task",
+      "name": "qm9_edm_prop_alpha",
+      "dataset": "qm9_edm_prop_alpha_test",
+      "output_dir": "evals/results/qm9_edm_prop_alpha",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "alpha"
+      },
+      "num_steps": 2,
+      "paper": true,
+      "description": "Molecular properties",
+      "response": {
+        "mode": "text",
+        "profile": "molecular_property",
+        "shots_dataset": "qm9_edm_prop_alpha_first_half_train"
+      },
+      "checkpoint": {}
+    },
+    {
+      "factory": "evals.tasks.molecular_properties.qm9_edm_prop:create_task",
+      "name": "qm9_edm_prop_gap",
+      "dataset": "qm9_edm_prop_gap_test",
+      "output_dir": "evals/results/qm9_edm_prop_gap",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "gap"
+      },
+      "num_steps": 2,
+      "paper": true,
+      "description": "Molecular properties",
+      "response": {
+        "mode": "text",
+        "profile": "molecular_property",
+        "shots_dataset": "qm9_edm_prop_gap_first_half_train"
+      },
+      "checkpoint": {}
+    },
+    {
+      "factory": "evals.tasks.molecular_properties.qm9_edm_prop:create_task",
+      "name": "qm9_edm_prop_homo",
+      "dataset": "qm9_edm_prop_homo_test",
+      "output_dir": "evals/results/qm9_edm_prop_homo",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "homo"
+      },
+      "num_steps": 2,
+      "paper": true,
+      "description": "Molecular properties",
+      "response": {
+        "mode": "text",
+        "profile": "molecular_property",
+        "shots_dataset": "qm9_edm_prop_homo_first_half_train"
+      },
+      "checkpoint": {}
+    },
+    {
+      "factory": "evals.tasks.molecular_properties.qm9_edm_prop:create_task",
+      "name": "qm9_edm_prop_lumo",
+      "dataset": "qm9_edm_prop_lumo_test",
+      "output_dir": "evals/results/qm9_edm_prop_lumo",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "lumo"
+      },
+      "num_steps": 2,
+      "paper": true,
+      "description": "Molecular properties",
+      "response": {
+        "mode": "text",
+        "profile": "molecular_property",
+        "shots_dataset": "qm9_edm_prop_lumo_first_half_train"
+      },
+      "checkpoint": {}
+    },
+    {
+      "factory": "evals.tasks.molecular_properties.qm9_edm_prop:create_task",
+      "name": "qm9_edm_prop_mu",
+      "dataset": "qm9_edm_prop_mu_test",
+      "output_dir": "evals/results/qm9_edm_prop_mu",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "mu"
+      },
+      "num_steps": 2,
+      "paper": true,
+      "description": "Molecular properties",
+      "response": {
+        "mode": "text",
+        "profile": "molecular_property",
+        "shots_dataset": "qm9_edm_prop_mu_first_half_train"
+      },
+      "checkpoint": {}
+    },
+    {
+      "factory": "evals.tasks.molecular_properties.qm9_edm_prop:create_task",
+      "name": "qm9_edm_prop_Cv",
+      "dataset": "qm9_edm_prop_Cv_test",
+      "output_dir": "evals/results/qm9_edm_prop_Cv",
+      "max_new_tokens": 24,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "Cv"
+      },
+      "num_steps": 2,
+      "paper": true,
+      "description": "Molecular properties",
+      "response": {
+        "mode": "text",
+        "profile": "molecular_property",
+        "shots_dataset": "qm9_edm_prop_Cv_first_half_train"
+      },
+      "checkpoint": {}
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.conditional_molecules.qm9_edm_cond:create_task",
+      "name": "qm9_edm_cond_alpha",
+      "dataset": "qm9_edm_cond_alpha_first_half_train",
+      "output_dir": "evals/results/qm9_edm_cond_alpha",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "alpha"
+      },
+      "num_examples": 50000,
+      "paper": true,
+      "description": "Conditional molecules",
+      "response": {
+        "mode": "xyz",
+        "profile": "conditional_molecule"
+      },
+      "checkpoint": {
+        "final_examples": 1000,
+        "refinement": "evals.tasks.conditional_molecules.refine:commands",
+        "shard_examples": 1024
+      }
+    },
+    {
+      "factory": "evals.tasks.conditional_molecules.qm9_edm_cond:create_task",
+      "name": "qm9_edm_cond_gap",
+      "dataset": "qm9_edm_cond_gap_first_half_train",
+      "output_dir": "evals/results/qm9_edm_cond_gap",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "gap"
+      },
+      "num_examples": 50000,
+      "paper": true,
+      "description": "Conditional molecules",
+      "response": {
+        "mode": "xyz",
+        "profile": "conditional_molecule"
+      },
+      "checkpoint": {
+        "final_examples": 1000,
+        "refinement": "evals.tasks.conditional_molecules.refine:commands",
+        "shard_examples": 1024
+      }
+    },
+    {
+      "factory": "evals.tasks.conditional_molecules.qm9_edm_cond:create_task",
+      "name": "qm9_edm_cond_homo",
+      "dataset": "qm9_edm_cond_homo_first_half_train",
+      "output_dir": "evals/results/qm9_edm_cond_homo",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "homo"
+      },
+      "num_examples": 50000,
+      "paper": true,
+      "description": "Conditional molecules",
+      "response": {
+        "mode": "xyz",
+        "profile": "conditional_molecule"
+      },
+      "checkpoint": {
+        "final_examples": 1000,
+        "refinement": "evals.tasks.conditional_molecules.refine:commands",
+        "shard_examples": 1024
+      }
+    },
+    {
+      "factory": "evals.tasks.conditional_molecules.qm9_edm_cond:create_task",
+      "name": "qm9_edm_cond_lumo",
+      "dataset": "qm9_edm_cond_lumo_first_half_train",
+      "output_dir": "evals/results/qm9_edm_cond_lumo",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "lumo"
+      },
+      "num_examples": 50000,
+      "paper": true,
+      "description": "Conditional molecules",
+      "response": {
+        "mode": "xyz",
+        "profile": "conditional_molecule"
+      },
+      "checkpoint": {
+        "final_examples": 1000,
+        "refinement": "evals.tasks.conditional_molecules.refine:commands",
+        "shard_examples": 1024
+      }
+    },
+    {
+      "factory": "evals.tasks.conditional_molecules.qm9_edm_cond:create_task",
+      "name": "qm9_edm_cond_mu",
+      "dataset": "qm9_edm_cond_mu_first_half_train",
+      "output_dir": "evals/results/qm9_edm_cond_mu",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "mu"
+      },
+      "num_examples": 50000,
+      "paper": true,
+      "description": "Conditional molecules",
+      "response": {
+        "mode": "xyz",
+        "profile": "conditional_molecule"
+      },
+      "checkpoint": {
+        "final_examples": 1000,
+        "refinement": "evals.tasks.conditional_molecules.refine:commands",
+        "shard_examples": 1024
+      }
+    },
+    {
+      "factory": "evals.tasks.conditional_molecules.qm9_edm_cond:create_task",
+      "name": "qm9_edm_cond_Cv",
+      "dataset": "qm9_edm_cond_Cv_first_half_train",
+      "output_dir": "evals/results/qm9_edm_cond_Cv",
+      "max_new_tokens": 32,
+      "samples_per_prompt": 5,
+      "prompt_batch_size": 256,
+      "extra": {
+        "property": "Cv"
+      },
+      "num_examples": 50000,
+      "paper": true,
+      "description": "Conditional molecules",
+      "response": {
+        "mode": "xyz",
+        "profile": "conditional_molecule"
+      },
+      "checkpoint": {
+        "final_examples": 1000,
+        "refinement": "evals.tasks.conditional_molecules.refine:commands",
+        "shard_examples": 1024
+      }
+    }
+  ]
+}

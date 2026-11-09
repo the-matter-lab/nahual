@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.conformers.geomconf_diverse:GeomconfDiverseTask",
+      "name": "geomconf_diverse",
+      "dataset": "geomconf_diverse_eval_test",
+      "output_dir": "evals/results/geomconf_diverse",
+      "max_new_tokens": 1400,
+      "samples_per_prompt": 1,
+      "prompt_batch_size": 160,
+      "num_examples": null,
+      "k_values": [
+        1
+      ],
+      "paper": true,
+      "description": "Conformers",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {
+        "max_examples": 50,
+        "routine": false,
+        "shard_examples": 16
+      },
+      "backends": [
+        "checkpoint"
+      ]
+    }
+  ]
+}

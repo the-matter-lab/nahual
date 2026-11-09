@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.metal_complexes.lnqm:LnqmTask",
+      "name": "lnqm",
+      "dataset": "lnqm_test",
+      "output_dir": "evals/results/lnqm",
+      "max_new_tokens": 120,
+      "samples_per_prompt": 3,
+      "prompt_batch_size": 128,
+      "k_values": [
+        1,
+        3
+      ],
+      "paper": true,
+      "description": "Metal complexes",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {
+        "shard_examples": 256
+      }
+    }
+  ]
+}

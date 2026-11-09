@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.api:RMSDTask",
+      "name": "nci",
+      "dataset": "nciatlas_finetune_test",
+      "output_dir": "evals/results/nci",
+      "max_new_tokens": 120,
+      "samples_per_prompt": 10,
+      "prompt_batch_size": 64,
+      "k_values": [
+        1,
+        3,
+        10
+      ],
+      "paper": true,
+      "description": "Noncovalent",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {
+        "shard_examples": 384
+      }
+    }
+  ]
+}

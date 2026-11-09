@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "factory": "evals.tasks.porous_adsorption.odac:OdacTask",
+      "name": "odac",
+      "dataset": "odac_test_grouped_global",
+      "output_dir": "evals/results/odac",
+      "max_new_tokens": 1024,
+      "samples_per_prompt": 3,
+      "prompt_batch_size": 40,
+      "num_examples": 1000,
+      "num_steps": 50,
+      "k_values": [
+        1,
+        3
+      ],
+      "paper": true,
+      "description": "Porous adsorption",
+      "response": {
+        "mode": "xyz"
+      },
+      "checkpoint": {
+        "shard_examples": 4,
+        "paper_protocol": {
+          "samples_per_prompt": 10,
+          "prompt_batch_size": 12
+        }
+      }
+    }
+  ]
+}

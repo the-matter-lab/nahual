@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "name": "exact_text_example",
+      "description": "Example contributor task; replace dataset and scorer",
+      "factory": "examples.evaluation.task:ExactText",
+      "dataset": "replace_with_your_dataset_split",
+      "samples_per_prompt": 1,
+      "max_new_tokens": 24,
+      "paper": false,
+      "response": {"mode": "text", "instruction": "Return only the answer."}
+    }
+  ]
+}

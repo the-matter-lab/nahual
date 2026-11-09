@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nahual"
+version = "0.1.0"
+description = "Autoregressive diffusion over sequences of language and atoms"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "evals/tasks/conditional_molecules/egnn/LICENSE"]
+# torch>=2.10 runs everything with attention_backend="flex". The default "varlen"
+# (torch.nn.attention.varlen, torch>=2.13) is about 6% faster; on older torch the
+# model falls back to "flex" with a single warning.
+dependencies = [
+  "torch>=2.10", "numpy>=1.26", "scipy>=1.14", "transformers>=5.0",
+  "datasets>=4.5", "safetensors", "tqdm", "ase>=3.27", "rdkit>=2023.3.3",
+  "pymatgen>=2025.10.7", "pandas>=2.3", "huggingface-hub", "smact>=3.2", "networkx",
+]
+
+[project.optional-dependencies]
+logging = ["wandb>=0.24"]
+
+[project.scripts]
+nahual-train = "nahual.train:main"
+nahual-infer = "nahual.infer:main"
+nahual-data = "nahual.prepare:main"
+nahual-eval = "evals.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["nahual*", "evals*"]
+
+[tool.setuptools.package-data]
+evals = ["tasks/*/task.json", "tasks/*/data/*.csv"]
